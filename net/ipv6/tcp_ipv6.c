@@ -1524,6 +1524,8 @@ process:
 		goto put_and_return;
 	}
 
+	sk_incoming_cpu_update(sk);
+
 	bh_lock_sock_nested(sk);
 	ret = 0;
 	if (!sock_owned_by_user(sk)) {
